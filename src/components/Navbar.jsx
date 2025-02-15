@@ -49,7 +49,7 @@ const Navbar = () => {
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <Box
             component="img"
-            src="/src/assets/images/Logo-1.png"
+            src="/src/assets/images/logo5.png"
             alt="Asarfo-Adjei Attorneys"
             sx={{
               height: { xs: '55px', sm: '60px' },

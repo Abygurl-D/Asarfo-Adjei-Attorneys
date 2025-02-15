@@ -24,19 +24,19 @@ const attorneys = [
 
 const About = () => {
   return (
-    <Box sx={{ bgcolor: '#fff' }}>
+    <Box sx={{ bgcolor: 'black' }}>
       {/* Main Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={5}>
             <Typography variant="h3" component="h1" gutterBottom sx={{ 
-              color: 'black',
+              color: '#AC835C',
               fontFamily: 'Playfair Display',
               fontWeight: 700
             }}>
               Excellence in Legal Practice
             </Typography>
-            <Typography variant="body1" sx={{ mb: 4, color: '#333' }}>
+            <Typography variant="body1" sx={{ mb: 4, color: 'white' }}>
               Founded in 1985, our firm has established itself as a leader in corporate and commercial law. 
               We combine decades of experience with innovative approaches to deliver exceptional results for our clients.
             </Typography>
@@ -66,7 +66,7 @@ const About = () => {
               <Card sx={{ height: '100%', bgcolor: '#fff' }}>
                 <CardContent>
                   <Typography variant="h5" component="h2" gutterBottom sx={{ 
-                    color: 'var(--primary-color)',
+                    color: 'black',
                     fontFamily: 'Playfair Display',
                     fontWeight: 600
                   }}>
@@ -119,23 +119,23 @@ const About = () => {
           </Grid>
           <Grid item xs={12} md={7}>
             <Typography variant="h4" component="h2" gutterBottom sx={{ 
-              color: 'var(--primary-color)',
+              color: '#AC835C',
               fontFamily: 'Playfair Display',
               fontWeight: 600
             }}>
               A Message from Our President
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography variant="body1" paragraph color='white'>
               For over three decades, our firm has stood at the forefront of legal excellence. 
               We've built our reputation on a foundation of trust, expertise, and unwavering commitment to our clients' success.
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography variant="body1" paragraph color='white'>
               As we look to the future, we remain dedicated to innovation while honoring the traditional values that have defined our practice.
             </Typography>
-            <Typography variant="h6" sx={{ mt: 2, fontWeight: 600 }}>
+            <Typography variant="h6" sx={{ mt: 2, fontWeight: 600 }} color='#AC835C'>
               James D. Mitchell
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
+            <Typography variant="subtitle1" color="#AC835C">
               President & Managing Partner
             </Typography>
           </Grid>
