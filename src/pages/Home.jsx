@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, } from "react-router-dom";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -109,6 +110,8 @@ const Home = () => {
 
           {/* Explore Firm Button */}
           <Button
+          component={Link}
+          to="/about"
             variant="outlined"
             sx={{
               mt: 3,
