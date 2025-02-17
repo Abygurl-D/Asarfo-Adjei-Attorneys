@@ -161,13 +161,13 @@ const About = () => {
                 <Typography variant="h2" fontFamily= 'playfair dispaly'>
                   Our <Box component="span" sx={{ color: '#AC835C' }}>Legacy</Box>
                 </Typography>
-                <Typography variant="body1"  fontFamily= 'playfair dispaly' sx={{ mb: 4 }}>
+                <Typography variant="body1"  fontFamily= 'playfair dispaly' fontSize={'20px'} sx={{ mb: 4 }}>
                   Since our founding in 1985, Mitchell Thompson & Associates has been at the 
                   forefront of legal innovation and excellence. Our journey began with a 
                   simple yet powerful vision: to provide unparalleled legal services while 
                   maintaining the highest standards of professional integrity.
                 </Typography>
-                <Typography variant="body1" fontFamily= 'playfair dispaly'>
+                <Typography variant="body1" fontFamily= 'playfair dispaly' fontSize={'20px'}>
                   Through decades of dedicated service, we have grown from a small practice 
                   into one of the region's most respected law firms, serving clients across 
                   multiple industries and jurisdictions.
@@ -228,13 +228,13 @@ const About = () => {
                 <Typography variant="h2" fontFamily= 'playfair dispaly'>
                   Our <Box component="span" sx={{ color: '#AC835C' }}>Vision</Box>
                 </Typography>
-                <Typography variant="body1"  fontFamily= 'playfair dispaly' sx={{ mb: 4 }}>
+                <Typography variant="body1"  fontFamily= 'playfair dispaly' fontSize={'20px'} sx={{ mb: 4 }}>
                   Looking ahead, we envision a future where legal services are more 
                   accessible, efficient, and aligned with the evolving needs of our clients. 
                   We are investing in cutting-edge legal technology and developing innovative 
                   solutions to address tomorrow's challenges.
                 </Typography>
-                <Typography variant="body1" fontFamily= 'playfair dispaly'>
+                <Typography variant="body1" fontFamily= 'playfair dispaly' fontSize={'20px'}>
                   Our commitment to excellence drives us to continuously adapt and grow, 
                   ensuring that we remain at the forefront of legal practice while maintaining 
                   the personal touch that has defined our firm for generations.
@@ -261,16 +261,16 @@ const About = () => {
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 2, my: 4 }}>
                   <Quote size={40} color="#AC835C" />
-                  <Typography variant="body1"  fontFamily= 'playfair dispaly'sx={{ fontStyle: 'italic' }}>
+                  <Typography variant="body1" fontSize={'20px'} fontFamily= 'playfair dispaly' sx={{ fontStyle: 'italic' }}>
                     Our success is built on the trust of our clients and the dedication of our team. 
                     We are committed to maintaining the highest standards of legal excellence while 
                     fostering innovation and growth in our practice.
                   </Typography>
                 </Box>
-                <Typography variant="h6" color="#AC835C">
+                <Typography variant="h6" color="#AC835C"fontFamily={'playfair display'} fontSize={'18px'}>
                   Sarah J. Mitchell
                 </Typography>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" fontFamily={'playfair display'} fontSize={'18px'}>
                   Managing Partner & President
                 </Typography>
               </MotionBox>

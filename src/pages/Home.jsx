@@ -93,16 +93,16 @@ const Home = () => {
             <Typography
               variant="h4"
               fontWeight="bold"
-              sx={{ fontStyle: "italic", fontSize: "36px" }}
+              sx={{ fontStyle: "italic",fontFamily:"Playfair Display", fontSize: "36px" }}
             >
               Reliable Legal Solution
             </Typography>
           </Box>
 
           {/* Subtitle */}
-          <Typography variant="h2" sx={{ fontStyle: "italic", fontSize: "70px" }}>
+          <Typography variant="h2" sx={{ fontFamily:"Playfair Display",fontStyle: "italic", fontSize: "70px" }}>
             We are here for the <br />
-            <Typography component="span" sx={{ color: "#AC835C", fontStyle: "italic", fontSize: "70px" }}>
+            <Typography component="span" sx={{ color: "#AC835C",fontFamily:"Playfair Display", fontStyle: "italic", fontSize: "70px" }}>
               voice of justice.
             </Typography>
           </Typography>
@@ -125,10 +125,10 @@ const Home = () => {
 
       {/* Introduction Section */}
       <Container sx={{ py: 8, textAlign: "center", maxWidth: "100vw" }}>
-        <Typography variant="h4" fontWeight="bold" color="#AC835C" mb={2}>
+        <Typography variant="h4" fontWeight="bold" fontFamily="Playfair Display" color="#AC835C" mb={2}>
           Welcome to Asarfo-Adjei Attorneys
         </Typography>
-        <Typography variant="body1" color="black" maxWidth="md" mx="auto">
+        <Typography variant="body1" color="black" fontFamily="Playfair Display" fontSize={"24px"} maxWidth="md" mx="auto">
           We are a premier law firm committed to delivering exceptional legal services in corporate law, litigation,
           intellectual property, and more. Our experienced attorneys work diligently to ensure the best outcomes for our clients.
         </Typography>
@@ -165,11 +165,11 @@ const Home = () => {
 
   {/* Left Section (Text) */}
   <Box sx={{ position: "relative", zIndex: 2, color: "#FFFFFF", flex: 1, pr: 2 }}>
-    <Typography variant="h4" sx={{ fontStyle: "italic", fontSize: "36px" }}>
+    <Typography variant="h4" sx={{ fontStyle: "italic", fontFamily:"Playfair Display", fontSize: "36px" }}>
       All people are equal before the law.
     </Typography>
-    <Typography variant="h4" sx={{ fontStyle: "italic", fontSize: "36px", mt: 1 }}>
-      <Typography component="span" sx={{ color: "#AC835C", fontStyle: "italic", fontWeight: "bold", fontSize: "36px" }}>
+    <Typography variant="h4"  sx={{ fontStyle: "italic",fontFamily:"Playfair Display", fontSize: "36px", mt: 1 }}>
+      <Typography component="span" sx={{ color: "#AC835C",fontFamily:"Playfair Display", fontStyle: "italic", fontWeight: "bold", fontSize: "36px" }}>
         A good attorney
       </Typography>{" "}
       is what makes a difference.
@@ -201,10 +201,10 @@ const Home = () => {
     >
       <PhoneIcon sx={{ color: "#FFFFFF", fontSize: "36px" }} />
     </Box>
-    <Typography sx={{ fontWeight: "bold", color: "#AC835C", fontSize: "36px", fontStyle: "italic" }}>
+    <Typography sx={{ fontWeight: "bold", color: "#AC835C", fontSize: "36px",fontFamily:"Playfair Display", fontStyle: "italic" }}>
       Get in Touch
     </Typography>
-    <Typography sx={{ color: "#FFFFFF", fontSize: "36px" }}>
+    <Typography sx={{ color: "#FFFFFF",fontFamily:"Playfair Display", fontSize: "36px" }}>
       +1 (234) 567-890
     </Typography>
   </Box>
