@@ -133,7 +133,7 @@ const About = () => {
         />
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           <MotionTypography
-            variant="h1"
+            variant="h2"
             color="white"
             textAlign="center"
             fontFamily={'playfair display'}

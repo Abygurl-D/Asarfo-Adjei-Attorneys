@@ -92,7 +92,7 @@ const Home = () => {
               <GavelIcon sx={{ color: "#FFFFFF" }} />
             </Box>
             <Typography
-              variant="h4"
+              variant="h3"
               fontWeight="bold"
               sx={{ fontStyle: "italic",fontFamily:"Playfair Display", fontSize: "36px" }}
             >
