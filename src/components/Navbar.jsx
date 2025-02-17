@@ -46,10 +46,10 @@ const Navbar = () => {
         }}
       >
         {/* Logo */}
-        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center',}}>
           <Box
             component="img"
-            src="/src/assets/images/logo5.png"
+            src="/src/assets/images/logos1.png"
             alt="Asarfo-Adjei Attorneys"
             sx={{
               height: { xs: '55px', sm: '60px' },
@@ -60,6 +60,8 @@ const Navbar = () => {
               "&:hover": { opacity: 0.85 },
               mr: 1,
               display: 'block',
+              fontWeight: 'bold',
+              fontSize: '50px'
             }}
           />
         </Link>
