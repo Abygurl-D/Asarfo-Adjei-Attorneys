@@ -5,28 +5,28 @@ import { Scale, Building2, BookOpen, Quote } from 'lucide-react';
 
 const partners = [
   {
-    name: "Sarah J. Mitchell",
+    name: "Augustine Asarfo Adjei",
     role: "Managing Partner",
     specialty: "Corporate Law",
     image: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&q=80&w=500",
-    bio: "With over 20 years of experience in corporate law, Sarah leads our firm's strategic direction and corporate practice.",
+    bio: "With over 14 years of experience in corporate law, Augustine leads our firm's strategic direction and corporate practice.",
     quote: "Excellence is not an act, but a habit in legal practice."
   },
   {
-    name: "Michael R. Thompson",
-    role: "Senior Partner",
+    name: "Ebenezer Asare",
+    role: "Partner",
     specialty: "Litigation",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500",
     bio: "A distinguished litigator with a proven track record of handling complex commercial disputes.",
     quote: "Justice is not just our profession, it's our passion."
   },
   {
-    name: "Elena Rodriguez",
+    name: "Raphael Tawiah Gyambrah",
     role: "Partner",
-    specialty: "International Law",
+    specialty: "Transaction Advisory",
     image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=500",
-    bio: "Specializing in international business law with expertise in cross-border transactions.",
-    quote: "Breaking barriers in international legal frameworks."
+    bio: "Providing strategic transaction advisory with expertise in mergers, acquisitions, and corporate restructuring.",
+    quote:"Guiding businesses through complex transactions with clarity and precision."
   }
 ];
 
@@ -141,7 +141,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Who<Box component="span" sx={{ color: '#AC835C' }}>We Are!</Box>
+            About<Box component="span" sx={{ color: '#AC835C' }}> Us!</Box>
             <br />
           </MotionTypography>
         </Container>
@@ -267,8 +267,8 @@ const About = () => {
                     fostering innovation and growth in our practice.
                   </Typography>
                 </Box>
-                <Typography variant="h6" color="#AC835C"fontFamily={'playfair display'} fontSize={'18px'}>
-                  Sarah J. Mitchell
+                <Typography variant="h5" color="#AC835C"fontFamily={'playfair display'} fontSize={'18px'}>
+                Augustine Asarfo Adjei
                 </Typography>
                 <Typography variant="subtitle1" fontFamily={'playfair display'} fontSize={'18px'}>
                   Managing Partner & President

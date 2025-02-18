@@ -69,7 +69,7 @@ const Contact = () => {
               </Typography>
             </Box>
             <Typography
-              variant="h3"
+              variant="h2"
               component="h1"
               sx={{
                 color: 'white',
