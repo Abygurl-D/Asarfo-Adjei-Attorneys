@@ -1,302 +1,348 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AppBar, Toolbar, Button, IconButton, Menu, MenuItem, Box } from "@mui/material";
-import { Menu as MenuIcon, Close as CloseIcon, ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
+import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Link,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import { Menu as MenuIcon, Globe } from "lucide-react";
 
 const Navbar = () => {
-  const [scroll, setScroll] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate();
+  const [languageAnchorEl, setLanguageAnchorEl] = useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const handleDropdownOpen = (event) => setAnchorEl(event.currentTarget);
-  const handleDropdownClose = () => setAnchorEl(null);
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
-  const handlePageNavigation = (path) => {
-    navigate(path);
-    setMenuOpen(false);
-    handleDropdownClose();
+  const handleLanguageMenuOpen = (event) => {
+    setLanguageAnchorEl(event.currentTarget);
+  };
+
+  const handleLanguageMenuClose = () => {
+    setLanguageAnchorEl(null);
   };
 
   return (
-    <AppBar 
+    <AppBar
       position="fixed"
-      elevation={scroll ? 4 : 0}
       sx={{
-        backgroundColor: "black",
-        transition: "background-color 0.3s",
+        backgroundColor: "#000000",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
       }}
     >
-      <Toolbar 
-        sx={{ 
-          display: "flex", 
-          justifyContent: "space-between", 
-          px: { xs: 2, lg: 4 }, 
-          py: 1.5,
-          minHeight: { xs: '70px', sm: '80px' }
-        }}
-      >
-        {/* Logo */}
-        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center',}}>
-          <Box
-            component="img"
-            src="/src/assets/images/logos1.png"
-            alt="Asarfo-Adjei Attorneys"
-            sx={{
-              height: { xs: '55px', sm: '60px' },
-              width: 'auto',
-              objectFit: "contain",
-              cursor: "pointer",
-              transition: 'opacity 0.3s ease',
-              "&:hover": { opacity: 0.85 },
-              mr: 1,
-              display: 'block',
-              fontWeight: 'bold',
-              fontSize: '50px'
-            }}
-          />
-        </Link>
-
-        {/* Nav Links - Desktop */}
-        <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 3 }}>
-          {[
-            { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
-            { name: "Practice Areas", path: "/practice-areas" },
-            { name: "Attorneys", path: "/attorneys" },
-            { name: "Case Study", path: "/case-study" }
-          ].map((item) => (
-            <Button
-              key={item.path}
-              component={Link}
-              to={item.path}
-              sx={{ 
-                color: "white", 
-                fontSize: '0.95rem',
-                fontWeight: 500,
-                "&:hover": { color: "#AB835C" },
-                textTransform: 'none'
-              }}
-            >
-              {item.name}
-            </Button>
-          ))}
-
-          {/* Dropdown Menu */}
-          <Button
-            onClick={handleDropdownOpen}
-            sx={{ 
-              color: "white", 
-              display: "flex", 
-              alignItems: "center",
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              "&:hover": { color: "#AB835C" },
-              textTransform: 'none'
-            }}
-          >
-            Pages <ExpandMoreIcon sx={{ ml: 0.5 }} />
-          </Button>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleDropdownClose}
-            PaperProps={{
-              sx: {
-                mt: 1,
-                backgroundColor: 'black',
-                color: 'white',
-                '& .MuiMenuItem-root': {
-                  fontSize: '0.95rem',
-                  color: 'white',
-                  '&:hover': {
-                    backgroundColor: 'rgba(171, 131, 92, 0.1)',
-                    color: '#AB835C'
-                  }
-                }
-              }
-            }}
-          >
-            {[
-              { name: "FAQs", path: "/faqs" },
-              { name: "Testimonials", path: "/testimonials" },
-              { name: "CSR", path: "/csr" }
-            ].map((page) => (
-              <MenuItem
-                key={page.path}
-                onClick={() => handlePageNavigation(page.path)}
-                component={Link}
-                to={page.path}
-              >
-                {page.name}
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-
-        {/* Get in Touch Button */}
-        <Button
-          component={Link}
-          to="/contact"
-          variant="outlined"
+      <Container maxWidth="xl">
+        <Toolbar
+          disableGutters
           sx={{
-            display: { xs: "none", lg: "block" },
-            borderColor: "#AB835C",
-            color: "#AB835C",
-            fontSize: '0.95rem',
-            fontWeight: 500,
-            textTransform: 'none',
-            px: 3,
-            "&:hover": { 
-              backgroundColor: "#AB835C", 
-              color: "white",
-              borderColor: "#AB835C"
-            },
+            minHeight: { xs: "70px", sm: "80px" },
+            py: { xs: 1, sm: 1.5 },
           }}
         >
-          Get in Touch
-        </Button>
-
-        {/* Mobile Menu Icon */}
-        <IconButton 
-          sx={{ 
-            display: { lg: "none" }, 
-            color: "#AB835C",
-            padding: '8px'
-          }} 
-          onClick={toggleMenu}
-        >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
-      </Toolbar>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <Box 
-          sx={{ 
-            display: { lg: "none" }, 
-            position: "absolute", 
-            top: { xs: '70px', sm: '80px' }, 
-            left: 0, 
-            width: "100%", 
-            bgcolor: "black", 
-            p: 2, 
-            boxShadow: 3 
-          }}
-        >
-          {[
-            { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
-            { name: "Practice Areas", path: "/practice-areas" },
-            { name: "Attorneys", path: "/attorneys" },
-            { name: "Case Study", path: "/case-study" }
-          ].map((item) => (
-            <Button
-              key={item.path}
-              component={Link}
-              to={item.path}
-              onClick={() => setMenuOpen(false)}
-              sx={{ 
-                color: "white", 
-                display: "block", 
-                textAlign: "left", 
-                width: "100%",
-                fontSize: '0.95rem',
-                fontWeight: 500,
-                textTransform: 'none',
-                py: 1,
-                "&:hover": { color: "#AB835C" } 
-              }}
-            >
-              {item.name}
-            </Button>
-          ))}
-
-          {/* Mobile Pages Menu */}
-          <Button
-            onClick={handleDropdownOpen}
-            sx={{ 
-              color: "#AB835C", 
-              textAlign: "left", 
-              width: "100%",
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              textTransform: 'none',
-              py: 1,
-              "&:hover": { color: "#AB835C" } 
+          {/* Logo */}
+          <Box
+            component={RouterLink}
+            to="/"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              flexGrow: { xs: 1, md: 0 },
+              textDecoration: "none",
             }}
           >
-            Pages <ExpandMoreIcon sx={{ ml: 0.5 }} />
-          </Button>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#AB835C",
+                fontFamily: "Playfair Display",
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.4rem" },
+                lineHeight: 1.2,
+              }}
+            >
+              Asarfo-Adjei
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              sx={{
+                color: "#AB835C",
+                fontFamily: "Playfair Display",
+                fontWeight: 500,
+                fontSize: { xs: "1.2rem", sm: "1.4rem" },
+              }}
+            >
+              Attorneys
+            </Typography>
+          </Box>
+
+          {isMobile ? (
+            <Box sx={{ display: "flex", gap: 2 }}>
+              {/* Language Selector - Mobile */}
+              <IconButton
+                onClick={handleLanguageMenuOpen}
+                sx={{
+                  color: "#AB835C",
+                }}
+              >
+                <Globe size={24} />
+              </IconButton>
+
+              {/* Mobile Menu Button */}
+              <IconButton
+                onClick={handleMenuOpen}
+                sx={{
+                  color: "#AB835C",
+                }}
+              >
+                <MenuIcon size={24} />
+              </IconButton>
+            </Box>
+          ) : (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 4,
+                ml: "auto",
+              }}
+            >
+              {/* Navigation Links */}
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Practice Areas", path: "/practice-areas" },
+                { name: "Case Study", path: "/case-study" },
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  component={RouterLink}
+                  to={item.path}
+                  sx={{
+                    color: "white",
+                    textDecoration: "none",
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    position: "relative",
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      width: "0%",
+                      height: "2px",
+                      bottom: -4,
+                      left: 0,
+                      backgroundColor: "#AB835C",
+                      transition: "width 0.3s ease",
+                    },
+                    "&:hover": {
+                      color: "#AB835C",
+                      "&::after": {
+                        width: "100%",
+                      },
+                    },
+                  }}
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              {/* Pages Dropdown */}
+              <Box>
+                <Button
+                  onClick={handleMenuOpen}
+                  sx={{
+                    color: "white",
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    textTransform: "none",
+                    "&:hover": { color: "#AB835C" },
+                  }}
+                >
+                  Pages
+                </Button>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  PaperProps={{
+                    sx: {
+                      mt: 1,
+                      backgroundColor: "#000000",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
+                      "& .MuiMenuItem-root": {
+                        color: "white",
+                        fontSize: "0.95rem",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          backgroundColor: "rgba(171, 131, 92, 0.1)",
+                          color: "#AB835C",
+                        },
+                      },
+                    },
+                  }}
+                >
+                  <MenuItem
+                    component={RouterLink}
+                    to="/testimonials"
+                    onClick={handleMenuClose}
+                  >
+                    Testimonials
+                  </MenuItem>
+                  <MenuItem
+                    component={RouterLink}
+                    to="/faqs"
+                    onClick={handleMenuClose}
+                  >
+                    FAQs
+                  </MenuItem>
+                </Menu>
+              </Box>
+
+              {/* Language Selector */}
+              <IconButton
+                onClick={handleLanguageMenuOpen}
+                sx={{
+                  color: "#AB835C",
+                }}
+              >
+                <Globe size={20} />
+              </IconButton>
+
+              {/* Get in Touch Button */}
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="outlined"
+                sx={{
+                  borderColor: "#AB835C",
+                  color: "#AB835C",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  textTransform: "none",
+                  px: 3,
+                  "&:hover": {
+                    backgroundColor: "#AB835C",
+                    borderColor: "#AB835C",
+                    color: "white",
+                  },
+                }}
+              >
+                Get in Touch
+              </Button>
+            </Box>
+          )}
+
+          {/* Mobile Menu */}
           <Menu
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
-            onClose={handleDropdownClose}
+            onClose={handleMenuClose}
+            sx={{ display: { xs: "block", md: "none" } }}
             PaperProps={{
               sx: {
-                backgroundColor: 'black',
-                color: 'white',
-                '& .MuiMenuItem-root': {
-                  fontSize: '0.95rem',
-                  color: 'white',
-                  '&:hover': {
-                    backgroundColor: 'rgba(171, 131, 92, 0.1)',
-                    color: '#AB835C'
-                  }
-                }
-              }
-            }}
-          >
-            {[
-              { name: "FAQs", path: "/faqs" },
-              { name: "Testimonials", path: "/testimonials" },
-              { name: "CSR", path: "/csr" }
-            ].map((page) => (
-              <MenuItem
-                key={page.path}
-                onClick={() => handlePageNavigation(page.path)}
-                component={Link}
-                to={page.path}
-              >
-                {page.name}
-              </MenuItem>
-            ))}
-          </Menu>
-
-          {/* Mobile Get in Touch Button */}
-          <Button
-            component={Link}
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-            variant="outlined"
-            sx={{
-              mt: 2,
-              width: "100%",
-              borderColor: "#AB835C",
-              color: "#AB835C",
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              textTransform: 'none',
-              "&:hover": { 
-                backgroundColor: "#AB835C", 
-                color: "white",
-                borderColor: "#AB835C"
+                width: "100%",
+                maxWidth: "100%",
+                left: "0 !important",
+                right: "0",
+                backgroundColor: "#000000",
+                borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+                "& .MuiMenuItem-root": {
+                  color: "white",
+                  fontSize: "0.95rem",
+                  py: 1.5,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    backgroundColor: "rgba(171, 131, 92, 0.1)",
+                    color: "#AB835C",
+                  },
+                },
               },
             }}
           >
-            Get in Touch
-          </Button>
-        </Box>
-      )}
+            {[
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Practice Areas", path: "/practice-areas" },
+              { name: "Case Study", path: "/case-study" },
+              { name: "Testimonials", path: "/testimonials" },
+              { name: "FAQs", path: "/faqs" },
+            ].map((item) => (
+              <MenuItem
+                key={item.path}
+                component={RouterLink}
+                to={item.path}
+                onClick={handleMenuClose}
+              >
+                {item.name}
+              </MenuItem>
+            ))}
+            <MenuItem sx={{ pt: 2 }}>
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="outlined"
+                fullWidth
+                onClick={handleMenuClose}
+                sx={{
+                  borderColor: "#AB835C",
+                  color: "#AB835C",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#AB835C",
+                    borderColor: "#AB835C",
+                    color: "white",
+                  },
+                }}
+              >
+                Get in Touch
+              </Button>
+            </MenuItem>
+          </Menu>
+
+          {/* Language Menu */}
+          <Menu
+            anchorEl={languageAnchorEl}
+            open={Boolean(languageAnchorEl)}
+            onClose={handleLanguageMenuClose}
+            PaperProps={{
+              sx: {
+                backgroundColor: "#000000",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                "& .MuiMenuItem-root": {
+                  color: "white",
+                  fontSize: "0.95rem",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    backgroundColor: "rgba(171, 131, 92, 0.1)",
+                    color: "#AB835C",
+                  },
+                },
+              },
+            }}
+          >
+            <MenuItem onClick={handleLanguageMenuClose}>English</MenuItem>
+            <MenuItem onClick={handleLanguageMenuClose}>Français</MenuItem>
+            <MenuItem onClick={handleLanguageMenuClose}>Español</MenuItem>
+          </Menu>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
