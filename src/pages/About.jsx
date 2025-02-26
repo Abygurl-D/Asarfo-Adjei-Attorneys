@@ -298,9 +298,9 @@ const About = () => {
       </Box>
 
       {/* Partner Gallery Section (Black) */}
-      <Box sx={{ bgcolor: 'black', py: 15 }}>
+      <Box sx={{ bgcolor: 'white', py: 15 }}>
         <Container>
-          <Typography variant="h2" fontFamily= 'playfair dispaly' color="white" align="center" sx={{ mb: 8 }}>
+          <Typography variant="h2" fontFamily= 'playfair dispaly' color="black" align="center" sx={{ mb: 8 }}>
             Our <Box component="span" sx={{ color: '#AC835C' }}>Partners</Box>
           </Typography>
           <Grid container spacing={4}>
