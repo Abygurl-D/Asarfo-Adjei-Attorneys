@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon, Globe, Scale } from "lucide-react";
 
-const Navbar = () => {
+const Testcode = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
@@ -157,7 +157,7 @@ const Navbar = () => {
               }}
             >
               <Typography
-                variant="h4"
+                variant="h6"
                 sx={{
                   color: "#AB835C",
                   fontFamily: "Playfair Display, serif",
@@ -170,12 +170,12 @@ const Navbar = () => {
                 Asarfo-Adjei
               </Typography>
               <Typography
-                variant="h4"
+                variant="subtitle2"
                 sx={{
                   color: "#AB835C",
                   fontFamily: "Playfair Display, serif",
-                  fontWeight: 600,
-                  fontSize: { xs: "1.1rem", sm: "1.3rem" },
+                  fontWeight: 500,
+                  fontSize: { xs: "1rem", sm: "1.2rem" },
                   letterSpacing: "0.02em",
                 }}
               >
@@ -478,4 +478,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Testcode;

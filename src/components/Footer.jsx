@@ -60,11 +60,12 @@ const Footer = () => {
                   Asarfo-Adjei
                 </Typography>
                 <Typography
-                  variant="subtitle2"
+                  variant="h5"
                   sx={{
                     color: '#AC835C',
                     fontFamily: 'Playfair Display',
-                    fontSize: '1rem',
+                    fontWeight: 600,
+                    fontSize: '1.5rem',
                   }}
                 >
                   Attorneys

@@ -1,61 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Box, 
-  Typography, 
-  Button, 
-  Container, 
-  Grid, 
-  Card, 
-  CardContent, 
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+  Grid,
+  Card,
+  CardContent,
   Divider,
   useMediaQuery,
-  useTheme
+  useTheme,
 } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Gavel, 
-  Scale, 
-  Building2, 
-  Users, 
-  FileText, 
+import {
+  Gavel,
+  Scale,
+  Building2,
+  Users,
+  FileText,
   Briefcase,
   ArrowRight,
   Award,
   Clock,
-  CheckCircle2
-} from 'lucide-react';
-
+  CheckCircle2,
+} from "lucide-react";
 
 // Hero images
 const images = [
   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80"
+  "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1740830904/hero1_rubmey.jpg",
+  "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1740830979/hero2_win0bn.jpg",
 ];
 
 // Practice areas data
 const practiceAreas = [
-  { 
-    title: "Corporate Law", 
-    icon: <Building2 size={32} />, 
-    description: "Expert guidance in corporate governance and business law" 
+  {
+    title: "Corporate Law",
+    icon: <Building2 size={32} />,
+    description: "Expert guidance in corporate governance and business law",
   },
-  { 
-    title: "Litigation", 
-    icon: <Gavel size={32} />, 
-    description: "Strategic representation in complex legal disputes" 
+  {
+    title: "Litigation",
+    icon: <Gavel size={32} />,
+    description: "Strategic representation in complex legal disputes",
   },
-  { 
-    title: "Intellectual Property", 
-    icon: <Scale size={32} />, 
-    description: "Protection and enforcement of intellectual property rights" 
+  {
+    title: "Intellectual Property",
+    icon: <Scale size={32} />,
+    description: "Protection and enforcement of intellectual property rights",
   },
-  { 
-    title: "Employment Law", 
-    icon: <Users size={32} />, 
-    description: "Comprehensive employment and labor law solutions" 
-  }
+  {
+    title: "Employment Law",
+    icon: <Users size={32} />,
+    description: "Comprehensive employment and labor law solutions",
+  },
 ];
 
 // Attorneys data
@@ -63,33 +62,40 @@ const attorneys = [
   {
     name: "Sarah Johnson",
     position: "Corporate Law",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Michael Chen",
     position: "Intellectual Property",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80"
+    image:
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Elena Rodriguez",
     position: "International Law",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
-  }
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 // Stats data
 const stats = [
   { value: "25+", label: "Years of Experience", icon: <Clock size={32} /> },
-  { value: "500+", label: "Successful Cases", icon: <CheckCircle2 size={32} /> },
+  {
+    value: "500+",
+    label: "Successful Cases",
+    icon: <CheckCircle2 size={32} />,
+  },
   { value: "50+", label: "Expert Attorneys", icon: <Users size={32} /> },
-  { value: "15+", label: "Industry Awards", icon: <Award size={32} /> }
+  { value: "15+", label: "Industry Awards", icon: <Award size={32} /> },
 ];
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
 
   // Auto-change images every 5 seconds
   useEffect(() => {
@@ -102,11 +108,11 @@ const Home = () => {
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   const staggerContainer = {
@@ -114,17 +120,17 @@ const Home = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const cardHover = {
     rest: { scale: 1 },
-    hover: { 
+    hover: {
       scale: 1.03,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
@@ -173,7 +179,8 @@ const Home = () => {
             position: "absolute",
             width: "100%",
             height: "100%",
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7))",
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7))",
           }}
         />
 
@@ -191,21 +198,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#AC835C",
-                fontFamily: "Playfair Display",
-                fontWeight: 500,
-                letterSpacing: 3,
-                mb: 2,
-                textTransform: "uppercase"
-              }}
-            >
-              Trusted Legal Partners
-            </Typography>
-          </motion.div>
+          ></motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -219,7 +212,7 @@ const Home = () => {
                 fontWeight: 700,
                 fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
                 lineHeight: 1.2,
-                mb: 3
+                mb: 3,
               }}
             >
               Excellence in <br />
@@ -241,11 +234,12 @@ const Home = () => {
                 fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
                 maxWidth: "800px",
                 mx: "auto",
-                mb: 4
+                mb: 4,
               }}
             >
-              Providing exceptional legal services with integrity and professionalism,
-              while maintaining the highest standards of ethical conduct and client advocacy.
+              Providing exceptional legal services with integrity and
+              professionalism, while maintaining the highest standards of
+              ethical conduct and client advocacy.
             </Typography>
           </motion.div>
 
@@ -254,7 +248,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 2,
+                flexWrap: "wrap",
+              }}
+            >
               <Button
                 component={Link}
                 to="/practice-areas"
@@ -266,11 +267,11 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1rem",
                   fontWeight: 500,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   textTransform: "none",
                   "&:hover": {
                     bgcolor: "#8a6a4a",
-                  }
+                  },
                 }}
               >
                 Our Services
@@ -286,12 +287,12 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1rem",
                   fontWeight: 500,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   textTransform: "none",
                   "&:hover": {
                     borderColor: "#AC835C",
                     bgcolor: "rgba(172, 131, 92, 0.1)",
-                  }
+                  },
                 }}
               >
                 Contact Us
@@ -314,7 +315,7 @@ const Home = () => {
               >
                 <Box
                   component="img"
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                  src="https://res.cloudinary.com/dmxzxo1fk/image/upload/v1740830947/about-01_ixkjbe.jpg"
                   alt="Law Firm Office"
                   sx={{
                     width: "100%",
@@ -333,20 +334,9 @@ const Home = () => {
                 variants={fadeIn}
               >
                 <Typography
-                  variant="subtitle1"
-                  sx={{
-                    color: "#AC835C",
-                    fontFamily: "Playfair Display",
-                    fontWeight: 600,
-                    mb: 2,
-                    letterSpacing: 1,
-                  }}
-                >
-                  ABOUT OUR FIRM
-                </Typography>
-                <Typography
                   variant="h3"
                   sx={{
+                    color: "#AC835C",
                     fontFamily: "Playfair Display",
                     fontWeight: 700,
                     mb: 3,
@@ -354,7 +344,7 @@ const Home = () => {
                     lineHeight: 1.2,
                   }}
                 >
-                  A Legacy of Excellence Since 1985
+                  A Legacy of Excellence 
                 </Typography>
                 <Typography
                   variant="body1"
@@ -365,49 +355,52 @@ const Home = () => {
                     lineHeight: 1.7,
                   }}
                 >
-                  Founded in 1985, our firm has established itself as a leader in corporate and commercial law. 
-                  We combine decades of experience with innovative approaches to deliver exceptional results for our clients.
+                  Founded in 1985, our firm has established itself as a leader
+                  in corporate and commercial law. We combine decades of
+                  experience with innovative approaches to deliver exceptional
+                  results for our clients.
                 </Typography>
                 <Box sx={{ mb: 4 }}>
                   {[
                     "Expert legal representation across multiple practice areas",
                     "Personalized approach tailored to each client's unique needs",
-                    "Commitment to ethical practice and professional excellence"
+                    "Commitment to ethical practice and professional excellence",
                   ].map((item, idx) => (
-                    <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                      <CheckCircle2 size={20} color="#AC835C" style={{ marginRight: 10 }} />
+                    <Box
+                      key={idx}
+                      sx={{ display: "flex", alignItems: "center", mb: 2 }}
+                    >
+                      <CheckCircle2
+                        size={20}
+                        color="#AC835C"
+                        style={{ marginRight: 10 }}
+                      />
                       <Typography sx={{ color: "#333" }}>{item}</Typography>
                     </Box>
                   ))}
                 </Box>
                 <Button
-                  component={Link}
-                  to="/about"
-                  sx={{
-                    color: "#AC835C",
-                    fontWeight: 600,
-                    display: "flex",
-                    alignItems: "center",
-                    textTransform: "none",
-                    p: 0,
-                    "&:hover": {
-                      bgcolor: "transparent",
-                      "& .arrow": {
-                        transform: "translateX(5px)",
-                      }
-                    }
-                  }}
-                >
-                  Learn More About Us
-                  <ArrowRight 
-                    size={18} 
-                    className="arrow" 
-                    style={{ 
-                      marginLeft: 8, 
-                      transition: "transform 0.3s ease" 
-                    }} 
-                  />
-                </Button>
+                component={Link}
+                to="/about"
+                variant="outlined"
+                sx={{
+                  borderColor: "#AC835C",
+                  color: "#AC835C",
+                  px: 4,
+                  py: 1.5,
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  borderRadius: 3,
+                  textTransform: "none",
+                  "&:hover": {
+                    color:'white',
+                    borderColor: "#AC835C",
+                    bgcolor: "#AC835C",
+                  },
+                }}
+              >
+                Learn More About Us
+              </Button>
               </motion.div>
             </Grid>
           </Grid>
@@ -427,39 +420,37 @@ const Home = () => {
               {stats.map((stat, index) => (
                 <Grid item xs={6} md={3} key={index}>
                   <motion.div variants={fadeIn}>
-                    <Card 
-                      sx={{ 
-                        height: "100%", 
-                        display: "flex", 
-                        flexDirection: "column", 
-                        alignItems: "center", 
-                        justifyContent: "center", 
+                    <Card
+                      sx={{
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
                         textAlign: "center",
                         p: 3,
                         boxShadow: "none",
                         bgcolor: "transparent",
-                        border: "1px solid #E0E0E0"
+                        border: "1px solid #E0E0E0",
                       }}
                     >
-                      <Box sx={{ color: "#AC835C", mb: 2 }}>
-                        {stat.icon}
-                      </Box>
-                      <Typography 
-                        variant="h3" 
-                        sx={{ 
-                          fontFamily: "Playfair Display", 
-                          fontWeight: 700, 
+                      <Box sx={{ color: "#AC835C", mb: 2 }}>{stat.icon}</Box>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          fontFamily: "Playfair Display",
+                          fontWeight: 700,
                           color: "#000",
-                          mb: 1
+                          mb: 1,
                         }}
                       >
                         {stat.value}
                       </Typography>
-                      <Typography 
-                        variant="body2" 
-                        sx={{ 
+                      <Typography
+                        variant="body2"
+                        sx={{
                           color: "#666",
-                          fontWeight: 500
+                          fontWeight: 500,
                         }}
                       >
                         {stat.label}
@@ -483,21 +474,11 @@ const Home = () => {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeIn}
             >
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  color: "#AC835C",
-                  fontFamily: "Playfair Display",
-                  fontWeight: 600,
-                  mb: 2,
-                  letterSpacing: 1,
-                }}
-              >
-                OUR EXPERTISE
-              </Typography>
+            
               <Typography
                 variant="h3"
                 sx={{
+                  color:'#AC835C',
                   fontFamily: "Playfair Display",
                   fontWeight: 700,
                   mb: 2,
@@ -515,7 +496,8 @@ const Home = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                Our firm specializes in a wide range of legal services to meet the diverse needs of our clients.
+                Our firm specializes in a wide range of legal services to meet
+                the diverse needs of our clients.
               </Typography>
             </motion.div>
           </Box>
@@ -549,21 +531,21 @@ const Home = () => {
                           "&:hover": {
                             bgcolor: "#000",
                             "& .title, & .description": {
-                              color: "#FFF"
+                              color: "#FFF",
                             },
                             "& .icon": {
-                              color: "#AC835C"
-                            }
-                          }
+                              color: "#AC835C",
+                            },
+                          },
                         }}
                       >
                         <CardContent sx={{ p: 4, flexGrow: 1 }}>
-                          <Box 
+                          <Box
                             className="icon"
-                            sx={{ 
-                              color: "#AC835C", 
+                            sx={{
+                              color: "#AC835C",
                               mb: 2,
-                              transition: "color 0.3s ease"
+                              transition: "color 0.3s ease",
                             }}
                           >
                             {area.icon}
@@ -576,7 +558,7 @@ const Home = () => {
                               fontWeight: 600,
                               mb: 2,
                               color: "#000",
-                              transition: "color 0.3s ease"
+                              transition: "color 0.3s ease",
                             }}
                           >
                             {area.title}
@@ -585,7 +567,7 @@ const Home = () => {
                             className="description"
                             sx={{
                               color: "#555",
-                              transition: "color 0.3s ease"
+                              transition: "color 0.3s ease",
                             }}
                           >
                             {area.description}
@@ -617,12 +599,13 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1rem",
                   fontWeight: 500,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   textTransform: "none",
                   "&:hover": {
+                    color:'white',
                     borderColor: "#AC835C",
-                    bgcolor: "rgba(172, 131, 92, 0.1)",
-                  }
+                    bgcolor: "#AC835C",
+                  },
                 }}
               >
                 View All Practice Areas
@@ -636,7 +619,7 @@ const Home = () => {
       <Box
         sx={{
           py: { xs: 6, md: 8 },
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80")`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://res.cloudinary.com/dmxzxo1fk/image/upload/v1740830885/12_l90fyd.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -649,7 +632,14 @@ const Home = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn}
           >
-            <Box sx={{ textAlign: "center", color: "white", maxWidth: "800px", mx: "auto" }}>
+            <Box
+              sx={{
+                textAlign: "center",
+                color: "white",
+                maxWidth: "800px",
+                mx: "auto",
+              }}
+            >
               <Typography
                 variant="h3"
                 sx={{
@@ -674,8 +664,9 @@ const Home = () => {
                   lineHeight: 1.7,
                 }}
               >
-                Our team of experienced attorneys is ready to help you navigate complex legal challenges.
-                Schedule a consultation today to discuss your case.
+                Our team of experienced attorneys is ready to help you navigate
+                complex legal challenges. Schedule a consultation today to
+                discuss your case.
               </Typography>
               <Button
                 component={Link}
@@ -688,11 +679,11 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1rem",
                   fontWeight: 500,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   textTransform: "none",
                   "&:hover": {
                     bgcolor: "#8a6a4a",
-                  }
+                  },
                 }}
               >
                 Schedule a Consultation
@@ -712,21 +703,11 @@ const Home = () => {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeIn}
             >
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  color: "#AC835C",
-                  fontFamily: "Playfair Display",
-                  fontWeight: 600,
-                  mb: 2,
-                  letterSpacing: 1,
-                }}
-              >
-                OUR TEAM
-              </Typography>
+             
               <Typography
                 variant="h3"
                 sx={{
+                  color:'#AC835C',
                   fontFamily: "Playfair Display",
                   fontWeight: 700,
                   mb: 2,
@@ -744,7 +725,8 @@ const Home = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                Our team of experienced attorneys is dedicated to providing exceptional legal services.
+                Our team of experienced attorneys is dedicated to providing
+                exceptional legal services.
               </Typography>
             </motion.div>
           </Box>
@@ -799,10 +781,10 @@ const Home = () => {
                             {attorney.name}
                           </Typography>
                           <Typography
-                            variant="body2"
+                            variant="h6"
                             sx={{
                               color: "#AC835C",
-                              fontWeight: 500,
+                              fontWeight: '500',
                             }}
                           >
                             {attorney.position}
@@ -834,12 +816,13 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1rem",
                   fontWeight: 500,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   textTransform: "none",
                   "&:hover": {
+                    color:'white',
                     borderColor: "#AC835C",
-                    bgcolor: "rgba(172, 131, 92, 0.1)",
-                  }
+                    bgcolor: "#AC835C",
+                  },
                 }}
               >
                 View All Attorneys
@@ -848,8 +831,6 @@ const Home = () => {
           </Box>
         </Container>
       </Box>
-
-    
     </Box>
   );
 };

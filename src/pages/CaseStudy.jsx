@@ -62,7 +62,7 @@ const CaseStudy = () => {
         sx={{
           height: { xs: '300px', sm: '350px' },
           position: 'relative',
-          backgroundImage: 'url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80")',
+          backgroundImage: 'url("https://res.cloudinary.com/dmxzxo1fk/image/upload/v1740833769/case_studies_z0v9ab.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           mb: 6,

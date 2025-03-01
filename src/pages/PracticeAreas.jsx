@@ -160,9 +160,12 @@ const PracticeAreas = () => {
             }}
           >
             <Typography
+            variant='h3'
+            component='h2'
               sx={{
                 color: 'white',
                 fontFamily: 'Playfair Display',
+                fontWeight:600,
                 fontSize: { xs: '1.25rem', sm: '1.5rem' },
                 mb: 1
               }}
