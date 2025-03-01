@@ -147,46 +147,36 @@ const PracticeAreas = () => {
           }
         }}
       >
-        <Container maxWidth="lg" sx={{ height: '100%', position: 'relative', zIndex: 1 }}>
-          <Box
-            sx={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-              pt: { xs: 8, sm: 9 }
-            }}
-          >
-            <Typography
-            variant='h3'
-            component='h2'
-              sx={{
-                color: 'white',
-                fontFamily: 'Playfair Display',
-                fontWeight:600,
-                fontSize: { xs: '1.25rem', sm: '1.5rem' },
-                mb: 1
-              }}
-            >
-              LEGAL PRACTICE
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                color: '#AC835C',
-                fontFamily: 'Playfair Display',
-                fontWeight: 700,
-                fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
-                lineHeight: 1.2,
-              }}
-            >
-              AREAS
-            </Typography>
-          </Box>
-        </Container>
+         <Container maxWidth="lg" sx={{ height: '100%', position: 'relative', zIndex: 1 }}>
+                 <Box
+                   sx={{
+                     height: '100%',
+                     display: 'flex',
+                     flexDirection: 'column',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                     textAlign: 'center',
+                     pt: { xs: 8, sm: 9 }
+                   }}
+                 >
+                   <Typography
+                     variant="h2"
+                     component="h1"
+                     sx={{
+                       color: 'white',
+                       fontFamily: 'Playfair Display',
+                       fontWeight: 700,
+                       fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+                       lineHeight: 1.2,
+                     }}
+                   >
+                     Legal{' '}
+                     <Box component="span" sx={{ color: '#AC835C' }}>
+                       Practice Areas
+                     </Box>
+                   </Typography>
+                 </Box>
+               </Container>
       </Box>
 
       {/* Practice Areas Grid */}

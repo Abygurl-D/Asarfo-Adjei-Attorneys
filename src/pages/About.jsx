@@ -131,20 +131,36 @@ const About = () => {
             opacity: 0.4,
           }}
         />
-        <Container sx={{ position: 'relative', zIndex: 1 }}>
-          <MotionTypography
-            variant="h2"
-            color="white"
-            textAlign="center"
-            fontFamily={'playfair display'}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            About<Box component="span" sx={{ color: '#AC835C' }}> Us!</Box>
-            <br />
-          </MotionTypography>
-        </Container>
+         <Container maxWidth="lg" sx={{ height: '100%', position: 'relative', zIndex: 1 }}>
+                 <Box
+                   sx={{
+                     height: '100%',
+                     display: 'flex',
+                     flexDirection: 'column',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                     textAlign: 'center',
+                     pt: { xs: 8, sm: 9 }
+                   }}
+                 >
+                   <Typography
+                     variant="h2"
+                     component="h1"
+                     sx={{
+                       color: 'white',
+                       fontFamily: 'Playfair Display',
+                       fontWeight: 700,
+                       fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+                       lineHeight: 1.2,
+                     }}
+                   >
+                     Who{' '}
+                     <Box component="span" sx={{ color: '#AC835C' }}>
+                       We Are
+                     </Box>
+                   </Typography>
+                 </Box>
+               </Container>
       </Box>
 
       {/* Firm History Section (White) */}
