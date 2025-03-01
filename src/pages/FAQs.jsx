@@ -76,36 +76,36 @@ const FAQs = () => {
           }
         }}
       >
-        <Container maxWidth="lg" sx={{ height: '100%', position: 'relative', zIndex: 1 }}>
-          <Box
-            sx={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-              pt: { xs: 8, sm: 9 }
-            }}
-          >
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                color: 'white',
-                fontFamily: 'Playfair Display',
-                fontWeight: 700,
-                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-                lineHeight: 1.2,
-              }}
-            >
-              Frequently Asked{' '}
-              <Box component="span" sx={{ color: '#AC835C' }}>
-                Questions
-              </Box>
-            </Typography>
-          </Box>
-        </Container>
+          <Container maxWidth="lg" sx={{ height: '100%', position: 'relative', zIndex: 1 }}>
+                  <Box
+                    sx={{
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                      pt: { xs: 8, sm: 9 }
+                    }}
+                  >
+                    <Typography
+                      variant="h2"
+                      component="h1"
+                      sx={{
+                        color: 'white',
+                        fontFamily: 'Playfair Display',
+                        fontWeight: 700,
+                        fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+                        lineHeight: 1.2,
+                      }}
+                    >
+                     Frequently Asked{' '}
+                      <Box component="span" sx={{ color: '#AC835C' }}>
+                        Questions
+                      </Box>
+                    </Typography>
+                  </Box>
+                </Container>
       </Box>
 
       {/* FAQ Section */}
