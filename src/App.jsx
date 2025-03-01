@@ -6,6 +6,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // Import the ScrollToTop component
 import Home from "./pages/Home";
 import About from "./pages/About";
 import PracticeAreas from "./pages/PracticeAreas";
@@ -54,6 +55,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
+          <ScrollToTop /> {/* Ensures scrolling to top on navigation */}
           <Navbar />
           <div className="pt-16 flex flex-col min-h-screen"> {/* Ensures footer stays at the bottom */}
             <div className="flex-grow"> {/* Allows content to expand while keeping footer at the bottom */}
