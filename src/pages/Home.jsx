@@ -466,154 +466,152 @@ const Home = () => {
 
       {/* Practice Areas Section */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "#FFFFFF" }}>
-        <Container>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeIn}
-            >
-            
-              <Typography
-                variant="h3"
-                sx={{
-                  color:'#AC835C',
-                  fontFamily: "Playfair Display",
-                  fontWeight: 700,
-                  mb: 2,
-                  fontSize: { xs: "2rem", md: "2.5rem" },
-                }}
-              >
-                Practice Areas
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "#555",
-                  maxWidth: "800px",
-                  mx: "auto",
-                  fontSize: "1.1rem",
-                }}
-              >
-                Our firm specializes in a wide range of legal services to meet
-                the diverse needs of our clients.
-              </Typography>
-            </motion.div>
-          </Box>
+  <Container>
+    <Box sx={{ textAlign: "center", mb: 6 }}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeIn}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            color:'#AC835C',
+            fontFamily: "Playfair Display",
+            fontWeight: 700,
+            mb: 2,
+            fontSize: { xs: "2rem", md: "2.5rem" },
+          }}
+        >
+          Practice Areas
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "#555",
+            maxWidth: "800px",
+            mx: "auto",
+            fontSize: "1.1rem",
+          }}
+        >
+          Our firm specializes in a wide range of legal services to meet the diverse needs of our clients.
+        </Typography>
+      </motion.div>
+    </Box>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
-            <Grid container spacing={3}>
-              {practiceAreas.map((area, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
-                  <motion.div variants={fadeIn}>
-                    <motion.div
-                      initial="rest"
-                      whileHover="hover"
-                      variants={cardHover}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={staggerContainer}
+    >
+      <Grid container spacing={3} alignItems="stretch">
+        {practiceAreas.map((area, index) => (
+          <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: "flex" }}>
+            <motion.div variants={fadeIn} style={{ width: "100%" }}>
+              <motion.div initial="rest" whileHover="hover" variants={cardHover}>
+                <Card
+                  component={Link}
+                  to="/practice-areas"
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    bgcolor: "#F5F5F5",
+                    boxShadow: "none",
+                    transition: "all 0.3s ease",
+                    textDecoration: "none",
+                    flex: 1,
+                    "&:hover": {
+                      bgcolor: "#000",
+                      "& .title, & .description": {
+                        color: "#FFF",
+                      },
+                      "& .icon": {
+                        color: "#AC835C",
+                      },
+                    },
+                  }}
+                >
+                  <CardContent sx={{ p: 4, flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                    <Box
+                      className="icon"
+                      sx={{
+                        color: "#AC835C",
+                        mb: 2,
+                        transition: "color 0.3s ease",
+                      }}
                     >
-                      <Card
-                        component={Link}
-                        to="/practice-areas"
-                        sx={{
-                          height: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                          bgcolor: "#F5F5F5",
-                          boxShadow: "none",
-                          transition: "all 0.3s ease",
-                          textDecoration: "none",
-                          "&:hover": {
-                            bgcolor: "#000",
-                            "& .title, & .description": {
-                              color: "#FFF",
-                            },
-                            "& .icon": {
-                              color: "#AC835C",
-                            },
-                          },
-                        }}
-                      >
-                        <CardContent sx={{ p: 4, flexGrow: 1 }}>
-                          <Box
-                            className="icon"
-                            sx={{
-                              color: "#AC835C",
-                              mb: 2,
-                              transition: "color 0.3s ease",
-                            }}
-                          >
-                            {area.icon}
-                          </Box>
-                          <Typography
-                            className="title"
-                            variant="h5"
-                            sx={{
-                              fontFamily: "Playfair Display",
-                              fontWeight: 600,
-                              mb: 2,
-                              color: "#000",
-                              transition: "color 0.3s ease",
-                            }}
-                          >
-                            {area.title}
-                          </Typography>
-                          <Typography
-                            className="description"
-                            sx={{
-                              color: "#555",
-                              transition: "color 0.3s ease",
-                            }}
-                          >
-                            {area.description}
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </motion.div>
-
-          <Box sx={{ textAlign: "center", mt: 5 }}>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeIn}
-            >
-              <Button
-                component={Link}
-                to="/practice-areas"
-                variant="outlined"
-                sx={{
-                  borderColor: "#AC835C",
-                  color: "#AC835C",
-                  px: 4,
-                  py: 1.5,
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                  borderRadius: 3,
-                  textTransform: "none",
-                  "&:hover": {
-                    color:'white',
-                    borderColor: "#AC835C",
-                    bgcolor: "#AC835C",
-                  },
-                }}
-              >
-                View All Practice Areas
-              </Button>
+                      {area.icon}
+                    </Box>
+                    <Typography
+                      className="title"
+                      variant="h5"
+                      sx={{
+                        fontFamily: "Playfair Display",
+                        fontWeight: 600,
+                        mb: 2,
+                        color: "#000",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      {area.title}
+                    </Typography>
+                    <Typography
+                      className="description"
+                      sx={{
+                        color: "#555",
+                        transition: "color 0.3s ease",
+                        flexGrow: 1,
+                      }}
+                    >
+                      {area.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </motion.div>
-          </Box>
-        </Container>
-      </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </motion.div>
+
+    <Box sx={{ textAlign: "center", mt: 5 }}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeIn}
+      >
+        <Button
+          component={Link}
+          to="/practice-areas"
+          variant="outlined"
+          sx={{
+            borderColor: "#AC835C",
+            color: "#AC835C",
+            px: 4,
+            py: 1.5,
+            fontSize: "1rem",
+            fontWeight: 500,
+            borderRadius: 3,
+            textTransform: "none",
+            "&:hover": {
+              color:'white',
+              borderColor: "#AC835C",
+              bgcolor: "#AC835C",
+            },
+          }}
+        >
+          View All Practice Areas
+        </Button>
+      </motion.div>
+    </Box>
+  </Container>
+</Box>
+
 
       {/* Call to Action Section */}
       <Box

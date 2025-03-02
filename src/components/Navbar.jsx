@@ -350,8 +350,9 @@ const Navbar = () => {
                 variant="outlined"
                 sx={{
                   borderColor: "#AB835C",
+                  borderRadius: 3,
                   color: "#AB835C",
-                  fontSize: "0.95rem",
+                  fontSize: "0.90rem",
                   fontWeight: 500,
                   textTransform: "none",
                   px: 3,
@@ -362,7 +363,7 @@ const Navbar = () => {
                   },
                 }}
               >
-                Get in Touch
+                Free Consultation
               </Button>
             </Box>
           )}
@@ -420,8 +421,9 @@ const Navbar = () => {
                 onClick={handleMenuClose}
                 sx={{
                   borderColor: "#AB835C",
+                  borderRadius: 3,
                   color: "#AB835C",
-                  fontSize: "0.95rem",
+                  fontSize: "0.90rem",
                   fontWeight: 500,
                   textTransform: "none",
                   "&:hover": {
@@ -431,7 +433,7 @@ const Navbar = () => {
                   },
                 }}
               >
-                Get in Touch
+                Free Consultation
               </Button>
             </MenuItem>
           </Menu>
